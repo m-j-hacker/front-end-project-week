@@ -26,7 +26,7 @@ const Heading = styled.h1`
 `
 
 class App extends Component {
-  componentDidMount
+  
   render() {
     return (
       <div className="App">

@@ -24,10 +24,10 @@ border-radius: 5px;
 `
 
 export default function Note(props) {
-    const note = props.notes.find(note => note._id === props.match.params.noteId);
+    const note = props.notes.find(note => note.id === props.match.params.noteId);
 
     function handleDelete() {
-        props.handleDeleteNote(note._id);
+        props.handleDeleteNote(note.id);
         props.history.push('/notes');
     }
 
@@ -40,7 +40,7 @@ export default function Note(props) {
     return (
         <div className="note-view">
         <div className="note-options">
-        <NoteOption onClick={(event) => props.goToUpdateNoteForm(event, note._id)}>edit </NoteOption>
+        <NoteOption onClick={(event) => props.goToUpdateNoteForm(event, note.id)}>edit </NoteOption>
         <NoteOption onClick={props.handleConfirmDelete}> delete</NoteOption>
         </div>
         <NoteTitle>{note.title}</NoteTitle>

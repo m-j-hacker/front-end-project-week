@@ -26,8 +26,8 @@ export default function NotesList(props) {
         {props.notes.map((note) => (
             <div 
             className="note-card"
-            key={note._id}
-            onClick={() => props.history.push(`/notes/${note._id}`)}>
+            key={note.id}
+            onClick={() => props.history.push(`/notes/${note.id}`)}>
             <h2>{note.title}</h2>
             <LineBreak />
             <Tags>{note.tags}</Tags>
