@@ -63,8 +63,8 @@ function NoteForm(props) {
                 />
                 <NoteContentField
                     type="text"
-                    value={props.note.textBody}
-                    name="textBody"
+                    value={props.note.contents}
+                    name="contents"
                     placeholder="Note Content"
                     onChange={props.handleChange}
                 />
@@ -84,7 +84,7 @@ function NoteForm(props) {
 NoteForm.propTypes = {
     note: PropTypes.shape({
         title: PropTypes.string,
-        textBody: PropTypes.string,
+        contents: PropTypes.string,
 
     })
 }
