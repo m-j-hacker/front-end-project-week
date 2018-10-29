@@ -93,7 +93,7 @@ export const setUpdateNote = id => {
 export const updateNote = note => dispatch => {
     dispatch({ type: UPDATING });
     axios
-    .put(`http://localhost:3333/api/notes/${note._id}`, note)
+    .put(`http://localhost:3333/api/notes/${note.id}`, note)
     .then(response => {
         dispatch({ type: UPDATED, payload: response.data });
     })

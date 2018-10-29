@@ -16,7 +16,7 @@ class NoteView extends React.Component {
         if (this.props.notes.length === 0) {
             this.props.fetchNotes();
         }
-        const note = this.state.notes.find(note => note.id === this.match.params.noteId);
+        
     }
 
     handleConfirmDelete = () => {
