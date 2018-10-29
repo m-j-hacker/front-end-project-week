@@ -20,7 +20,7 @@ export const fetchNotes = () => {
     return dispatch => {
         dispatch({ type: FETCHING });
         
-        axios.get('http://localhost:3333/api/notes')
+        axios.get('http://localhost:3333/api/notes/')
         .then(response => {
             dispatch({
                 type: FETCHED,
@@ -38,18 +38,14 @@ export const addNewNote = (note) => {
     return dispatch => {
         dispatch({ type: ADDING });
         axios
-        .post('http://localhost:3333/api/notes', note)
+        .post('http://localhost:3333/api/notes/', note)
         .then(response => {
             console.log(response);
             dispatch({
                 type: ADDED,
                 payload: response.data
             })
-            .then(fetchNotes())
-            
-          
         })
-        
         .catch(err => {
             console.log(err);
             dispatch({ type: ADD_ERROR })

@@ -9,7 +9,7 @@ class NoteFormView extends React.Component {
     state = {
         note: {
             title: '',
-            textBody: '',
+            contents: '',
             _id: '',
             tags: [],
         },

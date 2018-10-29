@@ -31,7 +31,7 @@ export default function NotesList(props) {
             <h2>{note.title}</h2>
             <LineBreak />
             <Tags>{note.tags}</Tags>
-            <p>{note.textBody}</p>
+            <p>{note.contents}</p>
             </div>
         ))}
         </div>

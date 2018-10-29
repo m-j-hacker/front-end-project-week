@@ -44,7 +44,7 @@ export default function Note(props) {
         <NoteOption onClick={props.handleConfirmDelete}> delete</NoteOption>
         </div>
         <NoteTitle>{note.title}</NoteTitle>
-        <NoteBody>{note.textBody}</NoteBody>
+        <NoteBody>{note.contents}</NoteBody>
         <NoteTag>{note.tags}</NoteTag>
         </div>
     )
