@@ -34,6 +34,24 @@ export const fetchNotes = () => {
     }
 }
 
+export const fetchNoteById = (noteId) => {
+    return dispatch => {
+        dispatch({ type: FETCHING });
+
+        axios.get(`http://localhost:3333/api/notes/${noteId}`)
+        .then(response => {
+            dispatch({
+                type: FETCHED,
+                payload: response.data
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            dispatch({ type: FETCH_ERROR, payload: err })
+        });
+    }
+}
+
 export const addNewNote = (note) => {
     return dispatch => {
         dispatch({ type: ADDING });

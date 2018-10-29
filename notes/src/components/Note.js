@@ -24,7 +24,7 @@ border-radius: 5px;
 `
 
 export default function Note(props) {
-    const note = props.notes.find(note => note.id === props.match.params.noteId);
+    const note = props.notes.find(note => note.id == props.match.params.noteId);
 
     function handleDelete() {
         props.handleDeleteNote(note.id);
