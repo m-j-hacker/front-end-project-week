@@ -21,7 +21,7 @@ export default function (state = initialState, action) {
         case ADDED:
             return {...state, addingNote: false};
         case SET_UPDATE_NOTE:
-            const note = state.notes.find(note => note._id === action.payload );
+            const note = state.notes.find(note => note.id === action.payload );
             return {...state, noteToUpdate: note ? note : null }
         case UPDATING:
             return {...state, updatingNote: true };

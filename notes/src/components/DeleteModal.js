@@ -61,7 +61,7 @@ class DeleteModal extends React.Component {
         if(!this.props.show) {
             return null;
         }
-        const noteToDelete = this.props.notes.find(note => note._id === this.props.match.params.noteId);
+        const noteToDelete = this.props.notes.find(note => note.id === this.props.match.params.noteId);
         return (
             
         <ModalBackground>
@@ -69,7 +69,7 @@ class DeleteModal extends React.Component {
                 <p>Are you sure you want to delete this?</p>
 
             <div className="modal-buttons">
-            <DeleteButton onClick={(event) => this.props.delete(event, noteToDelete._id)}>
+            <DeleteButton onClick={(event) => this.props.delete(event, noteToDelete.id)}>
               Delete
               </DeleteButton>
             <NoButton onClick={this.props.cancelDelete}>No</NoButton>

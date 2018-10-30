@@ -69,6 +69,7 @@ class NoteFormView extends React.Component {
 
 const mapStateToProps = state => ({
     noteToUpdate: state.noteToUpdate,
+    note: state.note
 });
 
 export default connect(mapStateToProps, { addNewNote, updateNote })(NoteFormView);
