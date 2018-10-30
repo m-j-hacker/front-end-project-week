@@ -61,7 +61,7 @@ class DeleteModal extends React.Component {
         if(!this.props.show) {
             return null;
         }
-        const noteToDelete = this.props.notes.find(note => note.id === this.props.match.params.noteId);
+        const noteToDelete = this.props.notes.find(note => note.id == this.props.match.params.noteId);
         return (
             
         <ModalBackground>
