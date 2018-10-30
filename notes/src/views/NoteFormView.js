@@ -10,8 +10,7 @@ class NoteFormView extends React.Component {
         note: {
             title: '',
             contents: '',
-            id: '',
-            tags: [],
+            
         },
         updatingNote: false,
     };
