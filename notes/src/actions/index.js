@@ -20,7 +20,7 @@ export const fetchNotes = () => {
     return dispatch => {
         dispatch({ type: FETCHING });
         
-        axios.get('http://localhost:3333/api/notes/')
+        axios.get('https://guarded-plateau-67733.herokuapp.com/api/notes/')
         .then(response => {
             dispatch({
                 type: FETCHED,
@@ -38,7 +38,7 @@ export const fetchNoteById = (noteId) => {
     return dispatch => {
         dispatch({ type: FETCHING });
 
-        axios.get(`http://localhost:3333/api/notes/${noteId}`)
+        axios.get(`https://guarded-plateau-67733.herokuapp.com/api/notes/${noteId}`)
         .then(response => {
             dispatch({
                 type: FETCHED,
@@ -56,7 +56,7 @@ export const addNewNote = (note) => {
     return dispatch => {
         dispatch({ type: ADDING });
         axios
-        .post('http://localhost:3333/api/notes/', note)
+        .post('https://guarded-plateau-67733.herokuapp.com/api/notes/', note)
         .then(response => {
             console.log(response);
             dispatch({
@@ -73,7 +73,7 @@ export const addNewNote = (note) => {
 
 export const deleteNote = noteId => dispatch => {
     dispatch({ type: DELETING });
-    axios.delete(`http://localhost:3333/api/notes/${noteId}`)
+    axios.delete(`https://guarded-plateau-67733.herokuapp.com/api/notes/${noteId}`)
     .then(response => {
         dispatch({ type: DELETED, payload: response.data });
     })
@@ -93,7 +93,7 @@ export const setUpdateNote = id => {
 export const updateNote = note => dispatch => {
     dispatch({ type: UPDATING });
     axios
-    .put(`http://localhost:3333/api/notes/${note.id}`, note)
+    .put(`https://guarded-plateau-67733.herokuapp.com/api/notes/${note.id}`, note)
     .then(response => {
         dispatch({ type: UPDATED, payload: response.data });
     })
