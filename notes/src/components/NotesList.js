@@ -24,6 +24,7 @@ export default function NotesList(props) {
     return (
         <div className="notes-container">
         {props.notes.map((note) => (
+            
             <div 
             className="note-card"
             key={note.id}
